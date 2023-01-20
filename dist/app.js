@@ -1,47 +1,46 @@
-//Task_1
-var button = document.querySelector("button");
-var input1 = document.getElementById("num1");
-var input2 = document.getElementById("num2");
+"use strict";
+const button1 = document.querySelector("button");
+const input1 = document.getElementById("num1");
+const input2 = document.getElementById("num2");
 function add(num1, num2) {
     return num1 + num2;
 }
-button.addEventListener("click", function () {
+button1.addEventListener("click", function () {
     console.log(add(+input1.value, +input2.value));
 });
-//Task_2
-var age = 50;
-var newName = "Max";
-var toggle = true;
-var empty = null;
-var notInitialize = undefined;
-var callback = function (a) {
+let age = 50;
+let newName = "Max";
+let toggle = true;
+let empty = null;
+let notInitialize = undefined;
+let callback = (a) => {
     return 100 + a;
 };
-var age1;
+let age1;
 age1 = 50;
-var name1;
+let name1;
 name1 = "Max";
-var toggle1;
+let toggle1;
 toggle1 = true;
-var empty1;
+let empty1;
 empty1 = null;
-var notInitialize1;
+let notInitialize1;
 notInitialize1 = undefined;
-var callback1;
-callback1 = function (a) {
+let callback1;
+callback1 = (a) => {
     return 100 + a;
 };
-var anything;
+let anything;
 anything = -20;
 anything = "Text";
 anything = {};
-var some;
+let some;
 some = "Text";
-var str;
+let str;
 if (typeof some === "string") {
     str = some;
 }
-var person;
+let person;
 person = ["Max", 21];
 var Status;
 (function (Status) {
@@ -49,14 +48,14 @@ var Status;
     Status[Status["READY"] = 1] = "READY";
 })(Status || (Status = {}));
 ;
-var apiStatus = {
-    status: Status.LOADING
+const apiStatus = {
+    status: Status.LOADING,
 };
 if (Status.LOADING === apiStatus.status) {
     console.log("Loading.....");
 }
-var result;
-var literal;
+let result;
+let literal;
 function showMessage(message) {
     console.log(message);
 }
@@ -69,20 +68,21 @@ function calc(num1, num2) {
 function customError() {
     throw new Error("Error");
 }
-var page1 = {
+const page1 = {
     title: "The awesome page",
     likes: 100,
     accounts: ["Max", "Anton", "Nikita"],
     status: "open",
     details: {
         createAt: "2021-01-01",
-        updateAt: "2021-05-01"
-    }
+        updateAt: "2021-05-01",
+    },
 };
-var page2;
+let page2;
 page2 = {
     title: "Python or Js",
     likes: 5,
     accounts: ["Alex"],
-    status: "close"
+    status: "close",
 };
+//# sourceMappingURL=app.js.map
