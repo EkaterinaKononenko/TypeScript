@@ -1,5 +1,5 @@
 //Task_1
-const button1 = document.querySelector("button")! as HTMLButtonElement;
+/*const button1 = document.querySelector("button")! as HTMLButtonElement;
 const input1 = document.getElementById("num1")! as HTMLInputElement;
 const input2 = document.getElementById("num2")! as HTMLInputElement;
 
@@ -103,5 +103,5 @@ let page2: {
   likes: 5,
   accounts: ["Alex"],
   status: "close",
-};
+};*/
 
