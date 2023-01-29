@@ -54,3 +54,54 @@ const person = new Person(key);
 house.openDoor(person.getKey());
 
 house.comeIn(person);
+
+//Task 5 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function getPromise():Promise<Array<string | number>>{
+  return new Promise((resolve) => {
+    resolve(["Text", 50]);
+  });
+}
+
+getPromise().then((data: string) => {
+  console.log(data);
+});
+//////////////////
+type AllType = {
+  name: string;
+  position: number;
+  color: string;
+  weight: number;
+};
+
+function compare(top: string, bottom: number): Pick<AllType, "name" | "position" | "color" | "weight">{
+  return {
+    name: top,
+    color: top,
+    position: bottom,
+    weight: bottom,
+  };
+}
+
+/*const nameColor: Pick<AllType, "name" | "color"> = {
+  name: "Sveta",
+  color: "green",
+};
+
+const positionWeight: Pick<AllType, "number" | "weight"> = {
+  number: 10,
+  weight: 50,
+};*/
+/////////////////////
+function merge<T, U>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+//////////////////////
+class Component<T>{
+  constructor(public props: T) {}
+}
+
+class Page extends Component<T> {
+  pageInfo() {
+    console.log(this.props.title);
+  }
+}
