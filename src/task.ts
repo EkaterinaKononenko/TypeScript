@@ -62,7 +62,7 @@ function getPromise():Promise<Array<string | number>>{
   });
 }
 
-getPromise().then((data: string) => {
+getPromise().then((data) => {
   console.log(data);
 });
 //////////////////
@@ -73,26 +73,17 @@ type AllType = {
   weight: number;
 };
 
-function compare(top: string, bottom: number): Pick<AllType, "name" | "position" | "color" | "weight">{
+function compare(top: Pick<AllType, "name" | "color">, bottom: Pick<AllType,"position" | "weight">): AllType {
   return {
-    name: top,
-    color: top,
-    position: bottom,
-    weight: bottom,
+    name: top.name,
+    color: top.color,
+    position: bottom.position,
+    weight: bottom.weight,
   };
 }
 
-/*const nameColor: Pick<AllType, "name" | "color"> = {
-  name: "Sveta",
-  color: "green",
-};
-
-const positionWeight: Pick<AllType, "number" | "weight"> = {
-  number: 10,
-  weight: 50,
-};*/
 /////////////////////
-function merge<T, U>(objA: T, objB: U) {
+function merge<T extends object, U extends object>(objA: T, objB: U) {
   return Object.assign(objA, objB);
 }
 //////////////////////
@@ -100,7 +91,11 @@ class Component<T>{
   constructor(public props: T) {}
 }
 
-class Page extends Component<T> {
+interface IProps {
+  title: string;
+}
+
+class Page extends Component<IProps> {
   pageInfo() {
     console.log(this.props.title);
   }
